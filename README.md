@@ -50,16 +50,16 @@ useradd -m -G users -s /bin/bash user
 passwd user
 systemctl start gdm.service
 systemctl enable NetworkManager.service
-pacman -S sudo
-vim /etc/sudoers
+sudo pacman -S sudo
+sudo vim /etc/sudoers
 ---
 ## Uncomment to allow members of group wheel to execute any command
 %wheel ALL=(ALL) ALL
 ---
 
-pacman -Rs gnome-software gnome-music
-pacman -S ntfs-3g android-file-transfer chromium vlc libreoffice-fresh gimp git clipgrap
-pacman -S android-tools android-udev
+sudo pacman -Rs gnome-software gnome-music
+sudo pacman -S ntfs-3g android-file-transfer chromium vlc libreoffice-fresh gimp git clipgrab
+sudo pacman -S android-tools android-udev
 cp /etc/X11/xinit/xinitrc ~/.xinitrc
 vim ~/.xinitrc
 ---
