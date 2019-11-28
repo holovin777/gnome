@@ -21,8 +21,14 @@ arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
 hwclock --systohc
 vim /etc/locale.gen
+---
+...
+en_US.UTF-8 UTF-8
+...
+---
+
 locale-gen
-/etc/locale.conf
+vim /etc/locale.conf
 ---
 LANG=en_US.UTF-8
 ---
@@ -41,16 +47,18 @@ vim /etc/hosts
 
 passwd
 pacman -Syu
-pacman -S gnome gnome-flashback gnome-keyring gnome-tweaks gnome-applets xf86-video-fbdev xorg-server xorg-xinit network-manager-applet ttf-dejavu ttf-droid xmonad xmonad-contribi dmenu
+pacman -S gnome gnome-flashback gnome-keyring gnome-tweaks gnome-applets xf86-video-fbdev xorg-server xorg-xinit network-manager-applet ttf-dejavu ttf-droid xmonad xmonad-contrib dmenu sudo grub
 pacman -S intel-ucode amd-ucode
 grub-install --target=i386-pc /dev/sdX
 grub-mkconfig -o /boot/grub/grub.cfg
+exit
+umount -R /mnt
 reboot
 useradd -m -G users -s /bin/bash user
 passwd user
 systemctl start gdm.service
 systemctl enable NetworkManager.service
-sudo pacman -S sudo
+systemctl start NetworkManager.service
 sudo vim /etc/sudoers
 ---
 ## Uncomment to allow members of group wheel to execute any command
@@ -58,7 +66,7 @@ sudo vim /etc/sudoers
 ---
 
 sudo pacman -Rs gnome-software gnome-music
-sudo pacman -S ntfs-3g android-file-transfer chromium vlc libreoffice-fresh gimp git clipgrab
+sudo pacman -S ntfs-3g android-file-transfer chromium vlc libreoffice-fresh gimp git clipgrab firefox
 sudo pacman -S android-tools android-udev
 cp /etc/X11/xinit/xinitrc ~/.xinitrc
 vim ~/.xinitrc
