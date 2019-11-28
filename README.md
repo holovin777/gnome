@@ -15,7 +15,7 @@ mkdir /mnt/boot
 mkdir /mnt/home
 mount /dev/sdX1 /mnt/boot
 mount /dev/sdX4 /mnt/home
-pacstrap /mnt base linux linux-firmware gvim
+pacstrap /mnt base base-devel linux linux-firmware gvim
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
@@ -68,6 +68,16 @@ sudo vim /etc/sudoers
 sudo pacman -Rs gnome-software gnome-music
 sudo pacman -S ntfs-3g android-file-transfer chromium vlc libreoffice-fresh gimp git clipgrab firefox
 sudo pacman -S android-tools android-udev
+sudo fallocate -l 512M /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+sudo vim /etc/fstab
+---
+...
+/swapfile none swap defaults 0 0
+---
+
 cp /etc/X11/xinit/xinitrc ~/.xinitrc
 vim ~/.xinitrc
 ---
