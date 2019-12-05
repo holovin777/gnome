@@ -91,11 +91,25 @@ vim .xmonad/xmonad.hs
 import XMonad
 
 main = xmonad def
-    { terminal    = "urxvt"
+    { terminal    = "gnome-terminal"
     , modMask     = mod4Mask
-    , borderWidth = 3
+    , borderWidth = 1
     }
 ---
 
 xmonad --recompile
+```
+
+##Steam
+```bash
+sudo vim /etc/pacman.conf
+---
+...
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+...
+---
+
+sudo pacman -Syu
+sudo pacman -S steam ttf-liberation
 ```
