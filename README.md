@@ -65,8 +65,8 @@ sudo vim /etc/sudoers
 %wheel ALL=(ALL) ALL
 ---
 
-sudo pacman -Rs gnome-software gnome-music
-sudo pacman -S ntfs-3g android-file-transfer chromium vlc libreoffice-fresh gimp git clipgrab firefox wget
+sudo pacman -Rs gnome-software gnome-music totem
+sudo pacman -S ntfs-3g android-file-transfer chromium vlc libreoffice-fresh gimp git clipgrab firefox wget openshot
 sudo pacman -S android-tools android-udev
 sudo fallocate -l 512M /swapfile
 sudo chmod 600 /swapfile
