@@ -113,3 +113,9 @@ Include = /etc/pacman.d/mirrorlist
 sudo pacman -Syu
 sudo pacman -S steam ttf-liberation
 ```
+
+##Bluetooth
+```bash
+systemctls start bluetooth.service
+systemctls enable bluetooth.service
+```
