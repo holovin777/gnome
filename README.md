@@ -42,7 +42,7 @@ vim /etc/hosts
 ---
 127.0.0.1	localhost
 ::1		localhost
-127.0.1.1	myhostname.localdomain	myhostname
+127.0.1.1	myhostname.localdomain    myhostname
 ---
 
 passwd
@@ -100,7 +100,7 @@ main = xmonad def
 xmonad --recompile
 ```
 
-##Steam
+## Steam
 ```bash
 sudo vim /etc/pacman.conf
 ---
@@ -114,7 +114,7 @@ sudo pacman -Syu
 sudo pacman -S steam ttf-liberation
 ```
 
-##Bluetooth
+## Bluetooth
 ```bash
 systemctls start bluetooth.service
 systemctls enable bluetooth.service
