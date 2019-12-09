@@ -1,5 +1,4 @@
 # wos
-Wos
 ```bash
 ping archlinux.org
 timedatectl set-ntp true
@@ -77,7 +76,9 @@ sudo vim /etc/fstab
 ...
 /swapfile none swap defaults 0 0
 ---
-
+```
+## Xmonad
+```bash
 cp /etc/X11/xinit/xinitrc ~/.xinitrc
 vim ~/.xinitrc
 ---
@@ -99,7 +100,6 @@ main = xmonad def
 
 xmonad --recompile
 ```
-
 ## Steam
 ```bash
 sudo vim /etc/pacman.conf
