@@ -46,7 +46,7 @@ vim /etc/hosts
 
 passwd
 pacman -Syu
-pacman -S gnome gnome-flashback gnome-keyring gnome-tweaks gnome-applets xf86-video-fbdev xorg-server xorg-xinit network-manager-applet ttf-dejavu ttf-droid xmonad xmonad-contrib dmenu sudo grub
+pacman -S gnome gnome-flashback gnome-keyring gnome-tweaks gnome-applets xf86-video-fbdev xorg-server xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid xmonad xmonad-contrib dmenu sudo grub
 pacman -S intel-ucode amd-ucode
 grub-install --target=i386-pc /dev/sdX
 grub-mkconfig -o /boot/grub/grub.cfg
