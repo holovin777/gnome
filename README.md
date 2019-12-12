@@ -94,6 +94,33 @@ sudo vim /etc/fstab
 /swapfile none swap defaults 0 0
 ---
 ```
+## Nopassword user
+```bash
+sudo vim /etc/gdm/custom.conf
+---
+# Enable automatic login for user with a delay
+[daemon]
+...
+TimedLoginEnable=true
+TimedLogin=user
+TimedLoginDelay=4
+
+# Enable automatic login for user without delay
+#[daemon]
+...
+#AutomaticLogin=username
+#AutomaticLoginEnable=True
+---
+
+vim /etc/pam.d/gdm-password
+---
+...
+auth sufficient pam_succeed_if.so user ingroup nopasswdlogin
+---
+
+groupadd nopasswdlogin
+gpasswd -a user nopasswdlogin
+```
 ## Xmonad
 ```bash
 cp /etc/X11/xinit/xinitrc ~/.xinitrc
