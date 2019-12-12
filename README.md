@@ -71,6 +71,14 @@ sudo vim /etc/sudoers
 %wheel ALL=(ALL) ALL
 ---
 
+sudo vim /etc/gdm/custom.conf
+---
+...
+# Uncomment the line below to force the login screen to use Xorg
+WaylandEnable=false
+...
+---
+
 systemctl start gdm.service
 systemctl enable gdm.service
 sudo pacman -Rs gnome-software gnome-music totem
