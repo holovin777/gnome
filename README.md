@@ -4,16 +4,22 @@ ping archlinux.org
 timedatectl set-ntp true
 fdisk -l
 fdisk /dev/sdX
-mkfs.fat -F 32 /dev/sdX1
-mkswap /dev/sdX2
-swapon /dev/sdX2
-mkfs.ext4 /dev/sdX3
-mkfs.ext4 /dev/sdX4
-mount /dev/sdX3 /mnt
-mkdir /mnt/boot
+```
+## MBR with BIOS
+```bash
+---
+o
+n
++40G
+n
+w
+---
+
+mkfs.ext4 /dev/sdX1
+mkfs.ext4 /dev/sdX2
+mount /dev/sdX1 /mnt
 mkdir /mnt/home
-mount /dev/sdX1 /mnt/boot
-mount /dev/sdX4 /mnt/home
+mount /dev/sdX2 /mnt/home
 pacstrap /mnt base base-devel linux linux-firmware gvim
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
@@ -123,4 +129,5 @@ systemctls enable bluetooth.service
 ## Some commands
 ```bash
 rsync -r source/. destination
+mkfs.fat -F 32 /dev/sdX1
 ```
