@@ -133,8 +133,8 @@ sudo pacman -S steam ttf-liberation
 
 ## Bluetooth
 ```bash
-systemctls start bluetooth.service
-systemctls enable bluetooth.service
+sudo systemctl start bluetooth.service
+sudo systemctl enable bluetooth.service
 ```
 
 ## Some commands
