@@ -60,8 +60,9 @@ exit
 umount -R /mnt
 reboot
 useradd -m -G users -s /bin/bash user
+useradd -m -G users,wheel -s /bin/bash admin
 passwd user
-systemctl start gdm.service
+passwd admin
 systemctl enable NetworkManager.service
 systemctl start NetworkManager.service
 sudo vim /etc/sudoers
@@ -70,6 +71,7 @@ sudo vim /etc/sudoers
 %wheel ALL=(ALL) ALL
 ---
 
+systemctl start gdm.service
 sudo pacman -Rs gnome-software gnome-music totem
 sudo pacman -S ntfs-3g android-file-transfer chromium vlc libreoffice-fresh gimp git clipgrab firefox wget openshot rsync
 sudo pacman -S android-tools android-udev
