@@ -94,6 +94,14 @@ sudo vim /etc/fstab
 /swapfile none swap defaults 0 0
 ---
 ```
+## Solid state drive
+```bash
+lsblk --discard
+sudo vim /etc/fstab
+---
+/dev/sdX1  /           ext4  defaults,discard   0  1
+---
+```
 ## Nopassword user
 ```bash
 sudo vim /etc/gdm/custom.conf
