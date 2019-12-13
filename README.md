@@ -82,7 +82,7 @@ WaylandEnable=false
 systemctl start gdm.service
 systemctl enable gdm.service
 sudo pacman -Rs gnome-software gnome-music totem
-sudo pacman -S ntfs-3g android-file-transfer chromium vlc libreoffice-fresh gimp git clipgrab firefox wget openshot rsync
+sudo pacman -S ntfs-3g android-file-transfer chromium vlc libreoffice-fresh gimp git clipgrab firefox wget openshot evolution rsync
 sudo pacman -S android-tools android-udev
 sudo fallocate -l 512M /swapfile
 sudo chmod 600 /swapfile
