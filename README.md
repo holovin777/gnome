@@ -151,6 +151,15 @@ main = xmonad def
 
 xmonad --recompile
 ```
+
+## Printer
+```bash
+sudo pacman -S cups cups-pdf
+sudo systemctl start org.cups.cupsd.service
+sudo systemctl enable org.cups.cupsd.service
+```
+[Drivers](https://wiki.archlinux.org/index.php/CUPS/Printer-specific_problems)
+
 ## Steam
 ```bash
 sudo vim /etc/pacman.conf
