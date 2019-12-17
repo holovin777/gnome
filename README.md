@@ -184,4 +184,5 @@ sudo systemctl enable bluetooth.service
 ```bash
 rsync -r source/. destination
 mkfs.fat -F 32 /dev/sdX1
+dd bs=4M if=path/to/archlinux.iso of=/dev/sdX status=progress oflag=sync
 ```
