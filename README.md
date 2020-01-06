@@ -1,4 +1,4 @@
-# wos
+# Gnome
 ```bash
 ping archlinux.org
 timedatectl set-ntp true
