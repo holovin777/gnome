@@ -128,6 +128,15 @@ auth sufficient pam_succeed_if.so user ingroup nopasswdlogin
 groupadd nopasswdlogin
 gpasswd -a user nopasswdlogin
 ```
+## Hide user from login list
+```bash
+sudo vim /var/lib/AccountsService/users/username
+---
+...
+SystemAccount=true
+---
+```
+
 ## Xmonad
 ```bash
 cp /etc/X11/xinit/xinitrc ~/.xinitrc
