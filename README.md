@@ -52,7 +52,7 @@ vim /etc/hosts
 
 passwd
 pacman -Syu
-pacman -S gnome gnome-software-packagekit-plugin gnome-flashback gnome-keyring gnome-tweaks gnome-applets xf86-video-fbdev xf86-video-vesa xf86-video-ati xf86-video-intel xf86-video-amdgpu xf86-video-nouveau xf86-input-synaptics xorg-server xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid xmonad xmonad-contrib dmenu sudo grub gst-libav
+pacman -S gnome gnome-software-packagekit-plugin gnome-flashback gnome-keyring gnome-tweaks gnome-applets xf86-video-fbdev xf86-video-vesa xf86-video-ati xf86-video-intel xf86-video-amdgpu xf86-video-nouveau xf86-input-synaptics xorg-server xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid ttf-liberation xmonad xmonad-contrib dmenu sudo grub gst-libav
 pacman -S intel-ucode amd-ucode
 grub-install --target=i386-pc /dev/sdX
 grub-mkconfig -o /boot/grub/grub.cfg
@@ -180,7 +180,7 @@ Include = /etc/pacman.d/mirrorlist
 ---
 
 sudo pacman -Syu
-sudo pacman -S steam ttf-liberation
+sudo pacman -S steam
 ```
 
 ## Bluetooth
