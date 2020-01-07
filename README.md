@@ -40,22 +40,35 @@ LANG=en_US.UTF-8
 
 vim /etc/hostname
 ---
-myhostname
+gnome
 ---
 
 vim /etc/hosts
 ---
 127.0.0.1	localhost
 ::1		localhost
-127.0.1.1	myhostname.localdomain    myhostname
+127.0.1.1	gnome.localdomain    gnome
 ---
 
 passwd
 pacman -Syu
-pacman -S gnome gnome-software-packagekit-plugin gnome-flashback gnome-keyring gnome-tweaks gnome-applets xf86-video-fbdev xf86-video-vesa xf86-video-ati xf86-video-intel xf86-video-amdgpu xf86-video-nouveau xf86-input-synaptics xorg-server xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid ttf-liberation xmonad xmonad-contrib dmenu sudo grub gst-libav
-pacman -S intel-ucode amd-ucode
+pacman -S gnome gnome-software-packagekit-plugin gnome-flashback gnome-keyring gnome-tweaks gnome-applets xf86-video-fbdev xf86-video-vesa xf86-video-ati xf86-video-intel xf86-video-amdgpu xf86-video-nouveau xf86-input-synaptics xorg-server xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid ttf-liberation xmonad xmonad-contrib dmenu sudo grub gst-libav ntfs-3g intel-ucode amd-ucode
 grub-install --target=i386-pc /dev/sdX
 grub-mkconfig -o /boot/grub/grub.cfg
+vim /etc/sudoers
+---
+## Uncomment to allow members of group wheel to execute any command
+%wheel ALL=(ALL) ALL
+---
+
+vim /etc/gdm/custom.conf
+---
+...
+# Uncomment the line below to force the login screen to use Xorg
+WaylandEnable=false
+...
+---
+
 exit
 umount -R /mnt
 reboot
@@ -65,40 +78,25 @@ passwd user
 passwd admin
 systemctl enable NetworkManager.service
 systemctl start NetworkManager.service
-sudo vim /etc/sudoers
----
-## Uncomment to allow members of group wheel to execute any command
-%wheel ALL=(ALL) ALL
----
-
-sudo vim /etc/gdm/custom.conf
----
-...
-# Uncomment the line below to force the login screen to use Xorg
-WaylandEnable=false
-...
----
-
 systemctl start gdm.service
 systemctl enable gdm.service
-sudo pacman -S ntfs-3g android-file-transfer chromium vlc libreoffice-fresh gimp git clipgrab firefox wget openshot evolution transmission-cli rsync
-sudo pacman -S android-tools android-udev
-sudo fallocate -l 512M /swapfile
+sudo pacman -S android-file-transfer android-tools android-udev chromium vlc libreoffice-fresh gimp git clipgrab firefox wget openshot evolution transmission-cli rsync
+sudo fallocate -l 4G /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
 sudo vim /etc/fstab
 ---
 ...
-/swapfile none swap defaults 0 0
+# swapfile
+/swapfile    none    swap    defaults    0    0
 ---
 ```
 ## Solid state drive
 ```bash
-lsblk --discard
 sudo vim /etc/fstab
 ---
-/dev/sdX1  /           ext4  defaults,discard   0  1
+/dev/sdX1    /    ext4    defaults,discard    0    1
 ---
 ```
 ## Nopassword user
