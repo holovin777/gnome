@@ -211,5 +211,5 @@ cd ..
 makepkg -si
 cd ..
 sudo rm -r windows2usb-git
-[How to use](https://github.com/ValdikSS/windows2usb)
+[How to use](https://github.com/ValdikSS/windows2usb#how-to-use)
 ```
