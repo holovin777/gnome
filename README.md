@@ -197,3 +197,19 @@ sudo blkid | grep sdX
 makepkg -si
 ssh-keygen -R <host>
 ```
+
+### Install windows.iso
+```bash
+cd Downloads
+git clone https://aur.archlinux.org/windows2usb-git.git
+cd windows2usb-git
+pacman -S p7zip
+git clone https://aur.archlinux.org/ms-sys.git
+cd ms-sys
+makepkg -si
+cd ..
+makepkg -si
+cd ..
+sudo rm -r windows2usb-git
+[How to use](https://github.com/ValdikSS/windows2usb)
+```
