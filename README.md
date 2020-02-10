@@ -197,6 +197,7 @@ sudo ntfsfix /dev/sdX1
 sudo blkid | grep sdX
 makepkg -si
 ssh-keygen -R <host>
+cp -r -n Downloads Downloads1
 ```
 
 ### Install windows.iso
