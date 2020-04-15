@@ -80,7 +80,7 @@ systemctl enable NetworkManager.service
 systemctl start NetworkManager.service
 systemctl start gdm.service
 systemctl enable gdm.service
-sudo pacman -S android-file-transfer android-tools android-udev chromium vlc libreoffice-fresh gimp git clipgrab firefox wget openshot evolution transmission-cli rsync postgresql
+sudo pacman -S android-file-transfer android-tools android-udev chromium vlc libreoffice-fresh gimp git clipgrab firefox wget openshot evolution transmission-cli rsync postgresql inkscape
 sudo fallocate -l 4G /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
