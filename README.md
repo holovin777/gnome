@@ -52,7 +52,7 @@ vim /etc/hosts
 
 passwd
 pacman -Syu
-pacman -S gnome gnome-software-packagekit-plugin gnome-flashback gnome-keyring gnome-tweaks gnome-applets xf86-video-fbdev xf86-video-vesa xf86-video-ati xf86-video-intel xf86-video-amdgpu xf86-video-nouveau xf86-input-synaptics xorg-server xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid ttf-liberation wqy-zenhei xmonad xmonad-contrib dmenu sudo grub gst-libav ntfs-3g intel-ucode amd-ucode
+pacman -S gnome gnome-software-packagekit-plugin gnome-flashback gnome-keyring gnome-tweaks gnome-applets xf86-video-fbdev xf86-video-vesa xf86-video-ati xf86-video-intel xf86-video-amdgpu xf86-video-nouveau xf86-input-synaptics xorg-server xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid ttf-liberation wqy-zenhei sudo grub gst-libav ntfs-3g intel-ucode amd-ucode
 grub-install --target=i386-pc /dev/sdX
 grub-mkconfig -o /boot/grub/grub.cfg
 vim /etc/sudoers
@@ -80,7 +80,7 @@ systemctl enable NetworkManager.service
 systemctl start NetworkManager.service
 systemctl start gdm.service
 systemctl enable gdm.service
-sudo pacman -S android-file-transfer android-tools android-udev chromium vlc libreoffice-still gimp git clipgrab firefox wget openshot evolution transmission-cli rsync postgresql inkscape
+sudo pacman -S android-file-transfer android-tools android-udev chromium vlc libreoffice-still gimp git clipgrab firefox wget openshot evolution transmission-cli rsync postgresql inkscape gnome-sound-recorder
 sudo fallocate -l 4G /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
@@ -137,6 +137,7 @@ SystemAccount=true
 
 ## Xmonad
 ```bash
+sudo pacman -S xmonad xmonad-contrib dmenu
 cp /etc/X11/xinit/xinitrc ~/.xinitrc
 vim ~/.xinitrc
 ---
