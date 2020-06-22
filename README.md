@@ -81,7 +81,7 @@ systemctl start NetworkManager.service
 systemctl start gdm.service
 systemctl enable gdm.service
 sudo pacman -S android-file-transfer android-tools android-udev chromium vlc libreoffice-still gimp git clipgrab firefox wget openshot evolution transmission-cli rsync postgresql inkscape gnome-sound-recorder
-sudo fallocate -l 4G /swapfile
+sudo dd if=/dev/zero of=/swapfile bs=1M count=4096 status=progress
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
