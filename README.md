@@ -199,7 +199,7 @@ sudo blkid | grep sdX
 makepkg -si
 ssh-keygen -R <host>
 cp -r -n Downloads Downloads1
-sudo chown -R holovin:holovin /home/holovin
+sudo chown -R user:user /home/user
 ```
 
 ### Install windows.iso
