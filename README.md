@@ -1,4 +1,14 @@
 # Gnome
+## Install Arch Linux via SSH
+```bash
+passwd
+systemctl start sshd.service
+ip addr show
+```
+On the local machine
+```bash
+ssh root@ip.address.of.target
+```
 ```bash
 ping archlinux.org
 timedatectl set-ntp true
