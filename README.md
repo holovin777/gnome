@@ -83,7 +83,7 @@ exit
 umount -R /mnt
 reboot
 useradd -m -G users -s /bin/bash user
-useradd -m -G users,wheel -s /bin/bash admin
+useradd -m -G users,wheel,adbusers -s /bin/bash admin
 passwd user
 passwd admin
 systemctl enable NetworkManager.service
