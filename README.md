@@ -1,5 +1,6 @@
 # Gnome
 ![alt text](https://www.gnome.org/wp-content/uploads/2020/08/cropped-logo.png "Logo Gnome")
+![alt text](https://archlinux.org/static/logos/archlinux-logo-light-1200dpi.7ccd81fd52dc.png "Logo ArchLinux")
 ## Install Arch Linux via SSH
 ```bash
 passwd
