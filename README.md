@@ -8,8 +8,6 @@ ip addr show
 On the local machine
 ```bash
 ssh root@ip.address.of.target
-```
-```bash
 ping archlinux.org
 timedatectl set-ntp true
 fdisk -l
@@ -17,14 +15,13 @@ fdisk /dev/sdX
 ```
 ## MBR with BIOS
 ```bash
----
 o
 n
 +40G
 n
 w
----
-
+```
+```bash
 mkfs.ext4 /dev/sdX1
 mkfs.ext4 /dev/sdX2
 mount /dev/sdX1 /mnt
@@ -36,49 +33,63 @@ arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
 hwclock --systohc
 vim /etc/locale.gen
----
+```
+```python
 ...
 en_US.UTF-8 UTF-8
 ...
----
-
+```
+```bash
 locale-gen
 vim /etc/locale.conf
----
+```
+```python
 LANG=en_US.UTF-8
----
-
+```
+```bash
 vim /etc/hostname
----
+```
+```python
 gnome
----
-
+```
+```bash
 vim /etc/hosts
----
+```
+```python
 127.0.0.1	localhost
 ::1		localhost
 127.0.1.1	gnome.localdomain    gnome
----
-
+```
+```bash
 passwd
 pacman -Syu
 pacman -S gnome gnome-software-packagekit-plugin gnome-flashback gnome-keyring gnome-tweaks gnome-applets xf86-video-fbdev xf86-video-vesa xf86-video-ati xf86-video-intel xf86-video-amdgpu xf86-video-nouveau xf86-input-synaptics xorg-server xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid ttf-liberation wqy-zenhei sudo grub gst-libav ntfs-3g intel-ucode amd-ucode
 grub-install --target=i386-pc /dev/sdX
+vim /etc/default/grub
+```
+```python
+...
+GRUB_DISABLE_OS_PROBER=false
+...
+```
+```bash
 grub-mkconfig -o /boot/grub/grub.cfg
 vim /etc/sudoers
----
+```
+```python
 ## Uncomment to allow members of group wheel to execute any command
 %wheel ALL=(ALL) ALL
----
-
+```
+```bash
 vim /etc/gdm/custom.conf
----
+```
+```python
 ...
 # Uncomment the line below to force the login screen to use Xorg
 WaylandEnable=false
 ...
----
-
+```
+```bash
 exit
 umount -R /mnt
 reboot
@@ -96,68 +107,45 @@ sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
 sudo vim /etc/fstab
----
+```
+```python
 ...
 # swapfile
 /swapfile    none    swap    defaults    0    0
----
+...
 ```
 ## Solid state drive
 ```bash
 sudo vim /etc/fstab
----
+```
+```python
 /dev/sdX1    /    ext4    defaults,discard    0    1
----
 ```
-## Nopassword user
-```bash
-sudo vim /etc/gdm/custom.conf
----
-# Enable automatic login for user with a delay
-[daemon]
-...
-TimedLoginEnable=true
-TimedLogin=user
-TimedLoginDelay=4
 
-# Enable automatic login for user without delay
-#[daemon]
-...
-#AutomaticLogin=username
-#AutomaticLoginEnable=True
----
-
-vim /etc/pam.d/gdm-password
----
-...
-auth sufficient pam_succeed_if.so user ingroup nopasswdlogin
----
-
-groupadd nopasswdlogin
-gpasswd -a user nopasswdlogin
-```
 ## Hide user from login list
 ```bash
 sudo vim /var/lib/AccountsService/users/username
----
+```
+```python
 ...
 SystemAccount=true
----
+...
 ```
-
 ## Xmonad
 ```bash
 sudo pacman -S xmonad xmonad-contrib dmenu
 cp /etc/X11/xinit/xinitrc ~/.xinitrc
 vim ~/.xinitrc
----
+```
+```python
 ...
 exec xmonad
----
-
+```
+```bash
 mkdir .xmonad
 vim .xmonad/xmonad.hs
----
+```
+```python
 import XMonad
 
 main = xmonad def
@@ -165,8 +153,8 @@ main = xmonad def
     , modMask     = mod4Mask
     , borderWidth = 1
     }
----
-
+```
+```bash
 xmonad --recompile
 ```
 
@@ -181,13 +169,14 @@ sudo systemctl enable org.cups.cupsd.service
 ## Steam
 ```bash
 sudo vim /etc/pacman.conf
----
+```
+```python
 ...
 [multilib]
 Include = /etc/pacman.d/mirrorlist
 ...
----
-
+```
+```bash
 sudo pacman -Syu
 sudo pacman -S steam
 ```
