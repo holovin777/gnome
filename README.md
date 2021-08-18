@@ -1,4 +1,5 @@
 # Gnome
+![alt text](https://www.gnome.org/wp-content/uploads/2020/08/cropped-logo.png "Logo Gnome")
 ## Install Arch Linux via SSH
 ```bash
 passwd
