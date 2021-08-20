@@ -202,6 +202,7 @@ sudo systemctl enable bluetooth.service
 
 ## Some commands
 ```bash
+git remote set-url origin git@github.com:holovin777/gnome.git
 rsync -r source/. destination
 mkfs.fat -F 32 /dev/sdX1
 dd bs=4M if=path/to/archlinux.iso of=/dev/sdX status=progress oflag=sync
