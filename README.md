@@ -133,6 +133,17 @@ sudo vim /var/lib/AccountsService/users/username
 SystemAccount=true
 ...
 ```
+
+## Hide applications from menu
+Example gnome-boxes
+Names for applications are located in directory /usr/share/applications
+```bash
+vim .local/share/applications/org.gnome.Boxes.desktop
+```
+```python
+Hidden=true
+```
+
 ## Xmonad
 ```bash
 sudo pacman -S xmonad xmonad-contrib dmenu
