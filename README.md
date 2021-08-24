@@ -144,6 +144,17 @@ vim .local/share/applications/org.gnome.Boxes.desktop
 Hidden=true
 ```
 
+## Qtile
+```bash
+sudo pacman -S qtile
+cp /usr/share/doc/qtile/default_config.py ~/.config/qtile/config.py
+vim ~/.xinitrc
+```
+```python
+...
+exec qtile start
+```
+
 ## Xmonad
 ```bash
 sudo pacman -S xmonad xmonad-contrib dmenu
