@@ -211,6 +211,12 @@ sudo systemctl start bluetooth.service
 sudo systemctl enable bluetooth.service
 ```
 
+## Convert .md to .pdf
+```bash
+sudo pacman -S pandoc textlive-core
+pandoc README.md -s -o readme.pdf
+```
+
 ## Some commands
 ```bash
 git remote set-url origin git@github.com:holovin777/gnome.git
