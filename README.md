@@ -213,9 +213,14 @@ sudo systemctl enable bluetooth.service
 
 ## Convert .md to .pdf
 ```bash
-sudo pacman -S pandoc textlive-core
-pandoc README.md -s -o readme.pdf
+mkdir grip
+cd grip
+python -m venv venv
+source venv/bin/activate
+pip install grip
+grip ../Documents/README.md
 ```
+Open localhost:6419 in Firefox, put `Ctrl+p` and save pdf file.
 
 ## Some commands
 ```bash
