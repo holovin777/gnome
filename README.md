@@ -66,8 +66,7 @@ passwd
 pacman -Syu
 ```
 ## Install Gnome
-| :exclamation: For only Qtile [pass](#continue-installation) this step |
-|-----------------------------------------------------------------------|
+_For only Qtile [pass](#continue-installation) this step_ 
 ```bash
 pacman -S gnome gnome-software-packagekit-plugin gnome-flashback gnome-keyring gnome-tweaks gnome-applets
 vim /etc/gdm/custom.conf
@@ -141,16 +140,14 @@ sudo vim /etc/fstab
 /dev/sdX1    /    ext4    defaults,discard    0    1
 ```
 ## Start Gnome
-| :exclamation: For only Qtile [pass](#qtile) this step |
-|-----------------------------------------------------------------------|
+_For only Qtile [pass](#qtile) this step_
 On the remote machine
 ```bash
 systemctl start gdm.service
 systemctl enable gdm.service
 ```
 ## Qtile
-| :exclamation: If your choose is Gnome, [pass](#hide-user-from-login-list) this step |
-|-----------------------------------------------------------------------|
+_If your choose is Gnome, [pass](#hide-user-from-login-list) this step_
 On the local machine
 ```bash
 sudo pacman -S qtile
