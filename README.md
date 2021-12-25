@@ -104,18 +104,23 @@ pacman -S xf86-video-fbdev xf86-video-vesa xf86-video-ati xf86-video-intel xf86-
 ## Users and services
 ```bash
 useradd -m -G users -s /bin/bash user
-useradd -m -G users -s /bin/bash user
-useradd -m -G users,wheel,adbusers -s /bin/bash admin
-passwd user
-passwd admin
-useradd -m -G users,wheel,adbusers -s /bin/bash admin
+useradd -m -G users,wheel,adbusers,video -s /bin/bash admin
 passwd user
 passwd admin
 exit
 umount -R /mnt
 reboot
+```
+On the remote machine login with root
+```bash
 systemctl enable NetworkManager.service
 systemctl start NetworkManager.service
+systemctl start sshd.service
+ip addr show
+```
+On the local machine
+```bash
+ssh admin@ip.address.of.target
 sudo dd if=/dev/zero of=/swapfile bs=1M count=4096 status=progress
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
@@ -138,6 +143,7 @@ sudo vim /etc/fstab
 ## Start Gnome
 | :exclamation: For only Qtile [pass](#qtile) this step |
 |-----------------------------------------------------------------------|
+On the remote machine
 ```bash
 systemctl start gdm.service
 systemctl enable gdm.service
@@ -145,6 +151,7 @@ systemctl enable gdm.service
 ## Qtile
 | :exclamation: If your choose is Gnome, [pass](#hide-user-from-login-list) this step |
 |-----------------------------------------------------------------------|
+On the local machine
 ```bash
 sudo pacman -S qtile
 ```
@@ -167,7 +174,10 @@ vim ~/.xinitrc
 ...
 exec qtile start
 ```
-## Hide user from login list
+```bash
+startx
+```
+## Hide user from login list GDM
 ```bash
 sudo vim /var/lib/AccountsService/users/username
 ```
@@ -176,7 +186,7 @@ sudo vim /var/lib/AccountsService/users/username
 SystemAccount=true
 ...
 ```
-## Hide applications from menu
+## Hide applications from menu Gnome
 Example gnome-boxes
 Names for applications are located in directory /usr/share/applications
 ```bash
