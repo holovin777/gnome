@@ -66,7 +66,8 @@ passwd
 pacman -Syu
 ```
 ## Install Gnome
-### For only Qtile do not install this
+| :exclamation: For only Qtile [pass](#continue-installation) this step |
+|-----------------------------------------------------------------------|
 ```bash
 pacman -S gnome gnome-software-packagekit-plugin gnome-flashback gnome-keyring gnome-tweaks gnome-applets
 vim /etc/gdm/custom.conf
@@ -135,19 +136,30 @@ sudo vim /etc/fstab
 /dev/sdX1    /    ext4    defaults,discard    0    1
 ```
 ## Start Gnome
+| :exclamation: For only Qtile [pass](#qtile) this step |
+|-----------------------------------------------------------------------|
 ```bash
 systemctl start gdm.service
 systemctl enable gdm.service
 ```
 ## Qtile
+| :exclamation: If your choose is Gnome, [pass](#hide-user-from-login-list) this step |
+|-----------------------------------------------------------------------|
 ```bash
 sudo pacman -S qtile
-cp /etc/X11/xinit/xinitrc ~/.xinitrc
+```
+For default config
+```bash
 cp /usr/share/doc/qtile/default_config.py ~/.config/qtile/config.py
 ```
-or
+or you can install config file by [holovin777](https://github.com/holovin777/qtile)
 ```bash
+cd .config
 git clone https://github.com/holovin777/qtile.git
+cd
+```
+### Xinitrc
+cp /etc/X11/xinit/xinitrc ~/.xinitrc
 vim ~/.xinitrc
 ```
 ```python
