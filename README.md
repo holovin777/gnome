@@ -15,11 +15,10 @@ timedatectl set-ntp true
 fdisk -l
 fdisk /dev/sdX
 ```
-## MBR with BIOS
 ```bash
 o
 n
-+40G
++100G
 n
 w
 ```
@@ -65,7 +64,22 @@ vim /etc/hosts
 ```bash
 passwd
 pacman -Syu
-pacman -S gnome gnome-software-packagekit-plugin gnome-flashback gnome-keyring gnome-tweaks gnome-applets xf86-video-fbdev xf86-video-vesa xf86-video-ati xf86-video-intel xf86-video-amdgpu xf86-video-nouveau xf86-input-synaptics xorg-server xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid ttf-liberation wqy-zenhei sudo grub gst-libav ntfs-3g intel-ucode amd-ucode
+```
+## Install Gnome
+### For only Qtile do not install this
+```bash
+pacman -S gnome gnome-software-packagekit-plugin gnome-flashback gnome-keyring gnome-tweaks gnome-applets
+vim /etc/gdm/custom.conf
+```
+```python
+...
+# Uncomment the line below to force the login screen to use Xorg
+WaylandEnable=false
+...
+```
+## Continue installation
+```bash
+pacman -S xf86-input-synaptics xorg-server xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid ttf-liberation wqy-zenhei sudo grub gst-libav ntfs-3g intel-ucode amd-ucode android-file-transfer android-tools android-udev chromium vlc libreoffice-still gimp git clipgrab firefox wget openshot evolution transmission-cli rsync postgresql inkscape gnome-sound-recorder
 grub-install --target=i386-pc /dev/sdX
 vim /etc/default/grub
 ```
@@ -82,28 +96,25 @@ vim /etc/sudoers
 ## Uncomment to allow members of group wheel to execute any command
 %wheel ALL=(ALL) ALL
 ```
+## Choose video driver
 ```bash
-vim /etc/gdm/custom.conf
+pacman -S xf86-video-fbdev xf86-video-vesa xf86-video-ati xf86-video-intel xf86-video-amdgpu xf86-video-nouveau
 ```
-```python
-...
-# Uncomment the line below to force the login screen to use Xorg
-WaylandEnable=false
-...
-```
+## Users and services
 ```bash
-exit
-umount -R /mnt
-reboot
+useradd -m -G users -s /bin/bash user
 useradd -m -G users -s /bin/bash user
 useradd -m -G users,wheel,adbusers -s /bin/bash admin
 passwd user
 passwd admin
+useradd -m -G users,wheel,adbusers -s /bin/bash admin
+passwd user
+passwd admin
+exit
+umount -R /mnt
+reboot
 systemctl enable NetworkManager.service
 systemctl start NetworkManager.service
-systemctl start gdm.service
-systemctl enable gdm.service
-sudo pacman -S android-file-transfer android-tools android-udev chromium vlc libreoffice-still gimp git clipgrab firefox wget openshot evolution transmission-cli rsync postgresql inkscape gnome-sound-recorder
 sudo dd if=/dev/zero of=/swapfile bs=1M count=4096 status=progress
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
@@ -123,7 +134,26 @@ sudo vim /etc/fstab
 ```python
 /dev/sdX1    /    ext4    defaults,discard    0    1
 ```
-
+## Start Gnome
+```bash
+systemctl start gdm.service
+systemctl enable gdm.service
+```
+## Qtile
+```bash
+sudo pacman -S qtile
+cp /etc/X11/xinit/xinitrc ~/.xinitrc
+cp /usr/share/doc/qtile/default_config.py ~/.config/qtile/config.py
+```
+or
+```bash
+git clone https://github.com/holovin777/qtile.git
+vim ~/.xinitrc
+```
+```python
+...
+exec qtile start
+```
 ## Hide user from login list
 ```bash
 sudo vim /var/lib/AccountsService/users/username
@@ -133,7 +163,6 @@ sudo vim /var/lib/AccountsService/users/username
 SystemAccount=true
 ...
 ```
-
 ## Hide applications from menu
 Example gnome-boxes
 Names for applications are located in directory /usr/share/applications
@@ -143,45 +172,6 @@ vim .local/share/applications/org.gnome.Boxes.desktop
 ```python
 Hidden=true
 ```
-
-## Qtile
-```bash
-sudo pacman -S qtile
-cp /usr/share/doc/qtile/default_config.py ~/.config/qtile/config.py
-vim ~/.xinitrc
-```
-```python
-...
-exec qtile start
-```
-
-## Xmonad
-```bash
-sudo pacman -S xmonad xmonad-contrib dmenu
-cp /etc/X11/xinit/xinitrc ~/.xinitrc
-vim ~/.xinitrc
-```
-```python
-...
-exec xmonad
-```
-```bash
-mkdir .xmonad
-vim .xmonad/xmonad.hs
-```
-```python
-import XMonad
-
-main = xmonad def
-    { terminal    = "gnome-terminal"
-    , modMask     = mod4Mask
-    , borderWidth = 1
-    }
-```
-```bash
-xmonad --recompile
-```
-
 ## Printer
 ```bash
 sudo pacman -S cups cups-pdf
