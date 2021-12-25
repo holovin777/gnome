@@ -159,6 +159,7 @@ git clone https://github.com/holovin777/qtile.git
 cd
 ```
 ### Xinitrc
+```bash
 cp /etc/X11/xinit/xinitrc ~/.xinitrc
 vim ~/.xinitrc
 ```
