@@ -197,6 +197,10 @@ exec qtile start
 ```bash
 startx
 ```
+### Install some apps for Qtile
+```bash
+sudo pacman -S evince nautilus gnome-system-monitor
+```
 ## Hide user from login list GDM
 ```bash
 sudo vim /var/lib/AccountsService/users/username
