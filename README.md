@@ -163,6 +163,26 @@ or you can install config file by [holovin777](https://github.com/holovin777/qti
 ```bash
 cd .config
 git clone https://github.com/holovin777/qtile.git
+```
+If you use laptop
+```bash
+sudo pacman -S acpilight
+ls /sys/class/backlight/
+```
+Change your backlight name
+```bash
+vim ~/.config/qtile/config.py
+```
+```python
+...
+widget.Backlight(
+    backlight_name='amdgpu_bl0',
+    change_command="xbacklight -set {0}",
+    foreground="#CD8A8A"
+),
+...
+```
+```bash
 cd
 ```
 ### Xinitrc
