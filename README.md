@@ -196,7 +196,7 @@ startx
 ```
 ### Install some apps for Qtile
 ```bash
-sudo pacman -S evince nautilus gnome-system-monitor
+sudo pacman -S evince nautilus gnome-system-monitor eog
 ```
 ## Hide user from login list GDM
 ```bash
