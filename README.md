@@ -2,9 +2,17 @@
 ![alt text](https://www.gnome.org/wp-content/uploads/2020/08/cropped-logo.png "Logo Gnome")
 ![alt text](https://archlinux.org/static/logos/archlinux-logo-light-scalable.1ae4cc2e2469.svg "Logo ArchLinux")
 ## Install Arch Linux via SSH
+If wifi connection
+```bash
+iwctl
+device list
+station DEVICE scan
+station DEVICE get-networks
+station DEVICE connect SSID
+exit
+```
 ```bash
 passwd
-systemctl start sshd.service
 ip addr show
 ```
 On the local machine
