@@ -164,11 +164,6 @@ For default config
 ```bash
 cp /usr/share/doc/qtile/default_config.py ~/.config/qtile/config.py
 ```
-or you can install config file by [holovin777](https://github.com/holovin777/qtile)
-```bash
-cd .config
-git clone https://github.com/holovin777/qtile.git
-```
 If you use laptop
 ```bash
 sudo pacman -S acpilight
