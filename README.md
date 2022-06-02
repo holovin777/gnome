@@ -76,7 +76,7 @@ pacman -Syu
 ## Install Gnome
 _For only Qtile [pass](#continue-installation) this step_ 
 ```bash
-pacman -S gnome gnome-software-packagekit-plugin gnome-flashback gnome-keyring gnome-tweaks gnome-applets
+pacman -S gnome gnome-software-packagekit-plugin gnome-flashback gnome-keyring gnome-applets
 vim /etc/gdm/custom.conf
 ```
 ```python
