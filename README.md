@@ -260,19 +260,46 @@ grip ../Documents/README.md
 Open localhost:6419 in Firefox, put `Ctrl+p` and save pdf file.
 
 ## Some commands
+Syncthing all directories and files
 ```bash
-git remote set-url origin git@github.com:holovin777/gnome.git
 rsync -r source/. destination
+```
+Format fat32
+```bash
 mkfs.fat -F 32 /dev/sdX1
+```
+Install iso file to device
+```bash
 dd bs=4M if=path/to/archlinux.iso of=/dev/sdX status=progress oflag=sync
+```
+Fix ext4 and ntfs devices
+```bash
 sudo fsck.ext4 /dev/sdX1
 sudo ntfsfix /dev/sdX1
+```
+Show device UUID
+```bash
 sudo blkid | grep sdX
+```
+Make package from AUR
+```bash
 makepkg -si
+```
+Regenerate ssh-key for specified host
+```bash
 ssh-keygen -R <host>
-cp -r -n Downloads Downloads1
-sudo chown -R user:user /home/user
+```
+Clear pacman cache
+```bash
 pacman -Scc
+```
+Permissions for user folder
+```bash
+sudo chown -R user:user /home/user
+```
+Copy folder without overwriting an exists files
+```bash
+cp -r -n Downloads Downloads1
 ```
 
 ### Install windows.iso
