@@ -222,8 +222,8 @@ Hidden=true
 ## Printer
 ```bash
 sudo pacman -S cups cups-pdf
-sudo systemctl start org.cups.cupsd.service
-sudo systemctl enable org.cups.cupsd.service
+sudo systemctl start cups.service
+sudo systemctl enable cups.service
 ```
 [Drivers](https://wiki.archlinux.org/index.php/CUPS/Printer-specific_problems)
 
