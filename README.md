@@ -293,6 +293,10 @@ Clear pacman cache
 ```bash
 pacman -Scc
 ```
+Update archlinux-keyring
+```bash
+pacman -Sy archlinux-keyring
+```
 Permissions for user folder
 ```bash
 sudo chown -R user:user /home/user
