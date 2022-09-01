@@ -158,7 +158,7 @@ systemctl enable gdm.service
 _If your choose is Gnome, [pass](#hide-user-from-login-list) this step_
 On the local machine
 ```bash
-sudo pacman -S qtile
+sudo pacman -S qtile xscreensaver
 ```
 For default config
 ```bash
@@ -192,6 +192,9 @@ vim ~/.xinitrc
 ```
 ```python
 ...
+alacritty &
+xscreensaver &
+xss-lock --ignore-sleep -- xscreensaver-command -lock &
 exec qtile start
 ```
 ```bash
