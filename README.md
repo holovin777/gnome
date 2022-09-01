@@ -223,6 +223,7 @@ vim .local/share/applications/org.gnome.Boxes.desktop
 Hidden=true
 ```
 ## Printer
+
 ```bash
 sudo pacman -S cups cups-pdf
 sudo systemctl start cups.service
@@ -230,6 +231,22 @@ sudo systemctl enable cups.service
 ```
 [Drivers](https://wiki.archlinux.org/index.php/CUPS/Printer-specific_problems)
 
+### Network connection to usb printer
+```bash
+sudo systemctl start avahi-daemon.service
+sudo systemctl enable avahi-daemon.service
+sudo vim /etc/nsswitch.conf
+```
+
+```python
+hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files myhostname dns
+```
+
+```bash
+sudo systemctl start cups.service
+```
+
+Open browser with address `localhost:631`
 ## Steam
 ```bash
 sudo vim /etc/pacman.conf
