@@ -273,6 +273,10 @@ For screensaver configuration start `xscreensaver-settings` app
 sudo pacman -S evince nautilus gnome-system-monitor eog
 ```
 
+### Swith to dark theme
+```bash
+gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+```
 
 ## Hide user from login list GDM
 
