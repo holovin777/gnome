@@ -97,7 +97,7 @@ pacman -Syu
 _For only Qtile [pass](#continue-installation) this step_ 
 
 ```bash
-pacman -S gnome gnome-software-packagekit-plugin gnome-flashback gnome-keyring gnome-applets
+pacman -S gnome gnome-software-packagekit-plugin gnome-flashback
 vim /etc/gdm/custom.conf
 ```
 
@@ -112,7 +112,7 @@ WaylandEnable=false
 ## Continue installation
 
 ```bash
-pacman -S archlinux-keyring pavucontrol alacritty openssh xf86-input-synaptics xorg-server xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid ttf-liberation wqy-zenhei sudo grub gst-libav ntfs-3g intel-ucode amd-ucode android-file-transfer android-tools android-udev chromium vlc libreoffice-still gimp git clipgrab firefox wget openshot evolution transmission-cli rsync postgresql inkscape gnome-sound-recorder ghostwriter
+pacman -S archlinux-keyring pavucontrol alacritty openssh xf86-input-synaptics xorg-server xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid ttf-liberation wqy-zenhei sudo grub gst-libav ntfs-3g intel-ucode amd-ucode android-file-transfer android-tools android-udev chromium vlc libreoffice-still gimp git clipgrab firefox wget openshot evolution transmission-cli rsync postgresql inkscape gnome-sound-recorder ghostwriter gnome-keyring gnome-applets
 grub-install --target=i386-pc /dev/sdX
 vim /etc/default/grub
 ```
@@ -210,7 +210,7 @@ _If your choose is Gnome, [pass](#hide-user-from-login-list) this step_
 On the local machine
 
 ```bash
-sudo pacman -S qtile xscreensaver gnome-keyring
+sudo pacman -S qtile xscreensaver
 ```
 
 For default config
