@@ -210,7 +210,7 @@ _If your choose is Gnome, [pass](#hide-user-from-login-list) this step_
 On the local machine
 
 ```bash
-sudo pacman -S qtile xscreensaver
+sudo pacman -S qtile xscreensaver gnome-keyring
 ```
 
 For default config
