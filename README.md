@@ -278,6 +278,13 @@ sudo pacman -S evince nautilus gnome-system-monitor eog
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 ```
 
+## Ohmyzsh
+```bash
+sudo pacman -S zsh zsh-completions
+chsh -s /bin/zsh
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
 ## Hide user from login list GDM
 
 ```bash
