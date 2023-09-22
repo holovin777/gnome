@@ -1,7 +1,4 @@
 # Gnome Installation cheatsheet
-![alt text](https://www.gnome.org/wp-content/uploads/2020/08/cropped-logo.png "Logo Gnome")
-![alt text](https://archlinux.org/static/logos/archlinux-logo-light-scalable.1ae4cc2e2469.svg "Logo ArchLinux")
-
 
 ## Install Arch Linux via SSH
 
@@ -81,8 +78,8 @@ vim /etc/hosts
 ```
 
 ```python
-127.0.0.1	localhost
-::1		localhost
+127.0.0.1   localhost
+::1		    localhost
 127.0.1.1	gnome.localdomain    gnome
 ```
 
@@ -108,11 +105,22 @@ WaylandEnable=false
 ...
 ```
 
+## Cromium install
+```bash
+pacman -S chromium
+```
+Install extantions:
+- Json formatter
+- Vimium
+Change search engine:
+- Settings
+- Search engine
+- Search engine used in the address bar. Learn more DuckDuckGo
 
 ## Continue installation
 
 ```bash
-pacman -S archlinux-keyring pavucontrol alacritty openssh xf86-input-synaptics xorg-server xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid ttf-liberation wqy-zenhei noto-fonts-emoji sudo grub gst-libav ntfs-3g intel-ucode amd-ucode android-file-transfer android-tools android-udev chromium vlc libreoffice-still gimp git clipgrab firefox wget openshot evolution transmission-cli rsync postgresql inkscape gnome-sound-recorder ghostwriter gnome-keyring gnome-applets
+pacman -S archlinux-keyring pavucontrol alacritty openssh xf86-input-synaptics xorg-server xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid ttf-liberation wqy-zenhei noto-fonts-emoji sudo grub gst-libav ntfs-3g intel-ucode amd-ucode android-file-transfer android-tools android-udev vlc libreoffice-still gimp git clipgrab firefox wget openshot evolution transmission-cli rsync postgresql inkscape gnome-sound-recorder ghostwriter gnome-keyring gnome-applets
 grub-install --target=i386-pc /dev/sdX
 vim /etc/default/grub
 ```
