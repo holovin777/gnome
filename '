@@ -90,11 +90,11 @@ pacman -Syu
 
 ## Install gnome-shell
 
-_For only Qtile or Gnome [pass](#Install Gnome) this step_ 
+_For only Qtile or Gnome pass this step_ 
 
 ```bash
 pacman -S gnome-shell gdm
-pacman -S pavucontrol alacritty xf86-input-synaptics xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid wqy-zenhei noto-fonts-emoji sudo grub gst-libav ntfs-3g amd-ucode vlc git clipgrab wget transmission-cli gnome-sound-recorder gnome-keyring gnome-applets clipgrab
+pacman -S pavucontrol alacritty xf86-input-synaptics xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid wqy-zenhei noto-fonts-emoji sudo grub gst-libav ntfs-3g amd-ucode vlc git clipgrab wget transmission-cli gnome-sound-recorder gnome-keyring gnome-applets
 pacman -S intel-ucode
 pacman -S amd-ucode
 ```
