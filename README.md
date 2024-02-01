@@ -79,8 +79,8 @@ vim /etc/hosts
 
 ```python
 127.0.0.1   localhost
-::1		    localhost
-127.0.1.1	gnome.localdomain    gnome
+::1         localhost
+127.0.1.1   gnome.localdomain   gnome
 ```
 
 ```bash
@@ -90,7 +90,7 @@ pacman -Syu
 
 ## Install gnome-shell
 
-_For only Qtile or Gnome [pass](#Install Gnome) this step_ 
+_For only Qtile or Gnome [pass](#install-gnome) this step_ 
 
 ```bash
 pacman -S gnome-shell gdm
@@ -98,6 +98,14 @@ pacman -S pavucontrol alacritty xf86-input-synaptics xorg-xinit network-manager-
 pacman -S git clipgrab wget transmission-cli gnome-sound-recorder gnome-keyring gnome-applets
 pacman -S intel-ucode
 pacman -S amd-ucode
+vim /etc/gdm/custom.conf
+```
+
+```python
+...
+# Uncomment the line below to force the login screen to use Xorg
+WaylandEnable=false
+...
 ```
 
 ### Install navigation
