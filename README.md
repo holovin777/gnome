@@ -90,7 +90,7 @@ pacman -Syu
 
 ## Install gnome-shell
 
-_For only Qtile or Gnome [pass](#install-gnome) this step_ 
+_For only Gnome [pass](#install-gnome) this step_ 
 
 ```bash
 pacman -S gnome-shell gdm
@@ -131,8 +131,6 @@ WaylandEnable=false
 - Close window Shift+Super+Q
 
 ## Install Gnome
-
-_For only Qtile [pass](#continue-installation) this step_ 
 
 ```bash
 pacman -S gnome gnome-software-packagekit-plugin gnome-flashback
@@ -246,88 +244,11 @@ sudo vim /etc/fstab
 
 ## Start Gnome
 
-_For only Qtile [pass](#qtile) this step_
-
 On the remote machine
 
 ```bash
 systemctl start gdm.service
 systemctl enable gdm.service
-```
-
-## Qtile
-
-_If your choose is Gnome, [pass](#hide-user-from-login-list) this step_
-
-On the local machine
-
-```bash
-sudo pacman -S qtile xscreensaver
-```
-
-For default config
-
-```bash
-cp /usr/share/doc/qtile/default_config.py ~/.config/qtile/config.py
-```
-
-If you use laptop
-
-```bash
-sudo pacman -S acpilight
-ls /sys/class/backlight/
-```
-
-Change your backlight name
-
-```bash
-vim ~/.config/qtile/config.py
-```
-
-```python
-...
-widget.Backlight(
-    backlight_name='amdgpu_bl0',
-    change_command="xbacklight -set {0}",
-    foreground="#CD8A8A"
-),
-...
-```
-
-```bash
-cd
-```
-
-### Xinitrc
-
-```bash
-cp /etc/X11/xinit/xinitrc ~/.xinitrc
-vim ~/.xinitrc
-```
-
-```python
-...
-alacritty &
-xscreensaver &
-xss-lock --ignore-sleep -- xscreensaver-command -lock &
-exec qtile start
-```
-
-```bash
-startx
-```
-
-For screensaver configuration start `xscreensaver-settings` app
-
-### Install some apps for Qtile
-
-```bash
-sudo pacman -S evince nautilus gnome-system-monitor eog
-```
-
-### Swith to dark theme
-```bash
-gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 ```
 
 ## Ohmyzsh
