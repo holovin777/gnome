@@ -94,10 +94,33 @@ _For only Qtile or Gnome [pass](#Install Gnome) this step_
 
 ```bash
 pacman -S gnome-shell gdm
-pacman -S pavucontrol alacritty xf86-input-synaptics xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid wqy-zenhei noto-fonts-emoji sudo grub gst-libav ntfs-3g amd-ucode vlc git clipgrab wget transmission-cli gnome-sound-recorder gnome-keyring gnome-applets clipgrab
+pacman -S pavucontrol alacritty xf86-input-synaptics xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid wqy-zenhei noto-fonts-emoji sudo grub gst-libav ntfs-3g gnome-control-center
+pacman -S git clipgrab wget transmission-cli gnome-sound-recorder gnome-keyring gnome-applets
 pacman -S intel-ucode
 pacman -S amd-ucode
 ```
+
+### Install navigation
+
+1. Open Settings
+2. Keyboard
+3. Keyboard Shourtcuts - View and Customize Shourts
+4. Navigation:
+- Move window one monitor down Shift+Super+J
+- Move window one monitor to the left Shift+Super+H
+- Move window one monitor to the right Shift+Super+L
+- Move window one monitor up Shift+Super+K
+- Move window to last workspace Shift+Super+.
+- Switch applications Super+J
+- Switch to last workspace Super+.
+- Switch to workspace 1 Super+1
+- Switch to workspace 2 Super+2
+- Switch to workspace 3 Super+3
+- Switch to workspace 4 Super+4
+- Switch to workspace on the left Super+H
+- Switch to workspace on the right Super+L
+5. Windows:
+- Close window Shift+Super+Q
 
 ## Install Gnome
 
@@ -120,9 +143,12 @@ WaylandEnable=false
 pacman -S chromium
 ```
 Install extantions:
+
 - Json formatter
 - Vimium
+
 Change search engine:
+
 - Settings
 - Search engine
 - Search engine used in the address bar. Learn more DuckDuckGo
