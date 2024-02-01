@@ -288,7 +288,7 @@ Hidden=true
 ## Printer
 
 ```bash
-sudo pacman -S cups cups-pdf
+sudo pacman -S cups cups-pdf nss-mdns
 sudo systemctl start cups.service
 sudo systemctl enable cups.service
 ```
