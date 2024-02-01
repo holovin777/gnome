@@ -95,7 +95,7 @@ _For only Qtile or Gnome [pass](#install-gnome) this step_
 ```bash
 pacman -S gnome-shell gdm
 pacman -S pavucontrol alacritty xf86-input-synaptics xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid wqy-zenhei noto-fonts-emoji sudo grub gst-libav ntfs-3g gnome-control-center
-pacman -S git clipgrab wget transmission-cli gnome-sound-recorder gnome-keyring gnome-applets
+pacman -S git clipgrab wget transmission-cli gnome-sound-recorder gnome-keyring gnome-applets eog evince
 pacman -S intel-ucode
 pacman -S amd-ucode
 vim /etc/gdm/custom.conf
