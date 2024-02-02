@@ -90,79 +90,61 @@ pacman -Syu
 
 ## Install gnome-shell
 
-_For only Gnome [pass](#install-gnome) this step_ 
+### Initial install
 
 ```bash
-pacman -S gnome-shell gdm
-pacman -S pavucontrol alacritty xf86-input-synaptics xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid wqy-zenhei noto-fonts-emoji sudo grub gst-libav ntfs-3g gnome-control-center
-pacman -S git clipgrab wget transmission-cli gnome-sound-recorder gnome-keyring gnome-applets eog evince
+pacman -S gnome-shell gdm archlinux-keyring alacritty openssh pavucontrol xf86-input-synaptics xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid wqy-zenhei noto-fonts-emoji sudo grub gst-libav ntfs-3g gnome-control-center git gnome-keyring gnome-applets wget rsync
+```
+
+### Intel or Amd install
+
+```bash
 pacman -S intel-ucode
 pacman -S amd-ucode
-vim /etc/gdm/custom.conf
 ```
 
+### Android install
+
+```bash
+pacman -S android-file-transfer android-tools android-udev
+```
+
+### Photo, video, pdf install
+
+```bash
+pacman -S eog evince gnome-sound-recorder vlc openshot gimp inkscape
+```
+
+### LibreOffice install
+
+```bash
+pacman -S libreoffice-still
+```
+
+### Torrent, Clipgrap install
+
+```bash
+pacman -S transmission-cli clipgrab
+```
+
+### PostgreSQL install
+
+```bash
+pacman -S postgresql
+```
+
+```bash
+vim /etc/gdm/custom.conf
+```
 ```python
 ...
 # Uncomment the line below to force the login screen to use Xorg
 WaylandEnable=false
 ...
 ```
-
-### Install navigation
-
-1. Open Settings
-2. Keyboard
-3. Keyboard Shourtcuts - View and Customize Shourts
-4. Navigation:
-- Move window one monitor down Shift+Super+J
-- Move window one monitor to the left Shift+Super+H
-- Move window one monitor to the right Shift+Super+L
-- Move window one monitor up Shift+Super+K
-- Move window to last workspace Shift+Super+.
-- Switch applications Super+J
-- Switch to last workspace Super+.
-- Switch to workspace 1 Super+1
-- Switch to workspace 2 Super+2
-- Switch to workspace 3 Super+3
-- Switch to workspace 4 Super+4
-- Switch to workspace on the left Super+H
-- Switch to workspace on the right Super+L
-5. Windows:
-- Close window Shift+Super+Q
-
-## Install Gnome
-
-```bash
-pacman -S gnome gnome-software-packagekit-plugin gnome-flashback
-vim /etc/gdm/custom.conf
-```
-
-```python
-...
-# Uncomment the line below to force the login screen to use Xorg
-WaylandEnable=false
-...
-```
-
-## Cromium install
-```bash
-pacman -S chromium
-```
-Install extantions:
-
-- Json formatter
-- Vimium
-
-Change search engine:
-
-- Settings
-- Search engine
-- Search engine used in the address bar. Learn more DuckDuckGo
 
 ## Continue installation
-
 ```bash
-pacman -S archlinux-keyring pavucontrol alacritty openssh xf86-input-synaptics xorg-server xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid ttf-liberation wqy-zenhei noto-fonts-emoji sudo grub gst-libav ntfs-3g intel-ucode amd-ucode android-file-transfer android-tools android-udev vlc libreoffice-still gimp git clipgrab firefox wget openshot evolution transmission-cli rsync postgresql inkscape gnome-sound-recorder ghostwriter gnome-keyring gnome-applets
 grub-install --target=i386-pc /dev/sdX
 vim /etc/default/grub
 ```
@@ -190,6 +172,49 @@ vim /etc/sudoers
 pacman -S xf86-video-fbdev xf86-video-vesa xf86-video-ati xf86-video-intel xf86-video-amdgpu xf86-video-nouveau
 ```
 
+### Install navigation
+
+1. Open Settings
+2. Keyboard
+3. Keyboard Shourtcuts - View and Customize Shourts
+4. Navigation:
+- Move window one monitor down Shift+Super+J
+- Move window one monitor to the left Shift+Super+H
+- Move window one monitor to the right Shift+Super+L
+- Move window one monitor up Shift+Super+K
+- Move window to last workspace Shift+Super+.
+- Switch applications Super+J
+- Switch to last workspace Super+.
+- Switch to workspace 1 Super+1
+- Switch to workspace 2 Super+2
+- Switch to workspace 3 Super+3
+- Switch to workspace 4 Super+4
+- Switch to workspace on the left Super+H
+- Switch to workspace on the right Super+L
+5. Windows:
+- Close window Shift+Super+Q
+
+### Multitasking
+
+1. Open Settings
+2. Multitasking
+3. Multi-Monitor
+4. Workspaces on primary display only
+
+## Cromium install
+```bash
+pacman -S chromium
+```
+Install extantions:
+
+1. Json formatter
+2. Vimium
+
+Change search engine:
+
+1. Settings
+2. Search engine
+3. Search engine used in the address bar. Learn more DuckDuckGo
 
 ## Users and services
 
@@ -198,6 +223,11 @@ useradd -m -G users -s /bin/bash user
 useradd -m -G users,wheel,adbusers,video -s /bin/bash admin
 passwd user
 passwd admin
+```
+
+## Reboot remote computer
+
+```bash
 exit
 umount -R /mnt
 reboot
