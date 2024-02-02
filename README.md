@@ -133,17 +133,19 @@ pacman -S transmission-cli clipgrab
 pacman -S postgresql
 ```
 
+## Continue installation
+
+### Choose video driver
+
 ```bash
-vim /etc/gdm/custom.conf
-```
-```python
-...
-# Uncomment the line below to force the login screen to use Xorg
-WaylandEnable=false
-...
+pacman -S xf86-video-fbdev
+pacman -S xf86-video-intel
+pacman -S xf86-video-amdgpu
+pacman -S xf86-video-ati
+pacman -S xf86-video-vesa
+pacman -S xf86-video-nouveau
 ```
 
-## Continue installation
 ```bash
 grub-install --target=i386-pc /dev/sdX
 vim /etc/default/grub
@@ -165,11 +167,14 @@ vim /etc/sudoers
 %wheel ALL=(ALL) ALL
 ```
 
-
-## Choose video driver
-
 ```bash
-pacman -S xf86-video-fbdev xf86-video-vesa xf86-video-ati xf86-video-intel xf86-video-amdgpu xf86-video-nouveau
+vim /etc/gdm/custom.conf
+```
+```python
+...
+# Uncomment the line below to force the login screen to use Xorg
+WaylandEnable=false
+...
 ```
 
 ### Install navigation
