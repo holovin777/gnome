@@ -183,21 +183,19 @@ WaylandEnable=false
 2. Keyboard
 3. Keyboard Shourtcuts - View and Customize Shourts
 4. Navigation:
-- Move window one monitor down Shift+Super+J
-- Move window one monitor to the left Shift+Super+H
-- Move window one monitor to the right Shift+Super+L
-- Move window one monitor up Shift+Super+K
-- Move window to last workspace Shift+Super+.
-- Switch applications Super+J
-- Switch to last workspace Super+.
-- Switch to workspace 1 Super+1
-- Switch to workspace 2 Super+2
-- Switch to workspace 3 Super+3
-- Switch to workspace 4 Super+4
-- Switch to workspace on the left Super+H
-- Switch to workspace on the right Super+L
+- Move window one workspace to the left **Shift+Super+H**
+- Move window one workspace to the right **Shift+Super+L**
+- Move window to last workspace **Shift+Super+.**
+- Switch applications **Super+J**
+- Switch to last workspace **Super+.**
+- Switch to workspace 1 **Super+1**
+- Switch to workspace 2 **Super+2**
+- Switch to workspace 3 **Super+3**
+- Switch to workspace 4 **Super+4**
+- Switch to workspace on the left **Super+H**
+- Switch to workspace on the right **Super+L**
 5. Windows:
-- Close window Shift+Super+Q
+- Close window **Shift+Super+Q**
 
 ### Multitasking
 
