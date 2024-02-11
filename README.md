@@ -338,7 +338,7 @@ hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files
 ```
 
 ```bash
-sudo systemctl start cups.service
+sudo systemctl restart cups.service
 ```
 
 Open browser with address `localhost:631`
