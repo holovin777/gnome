@@ -196,6 +196,13 @@ WaylandEnable=false
 - Switch to workspace on the right **Super+L**
 5. Windows:
 - Close window **Shift+Super+Q**
+- Hide window **Alt+Super+H**
+- Maximaze window **Ctrl+Super+K**
+- Restore window **Ctrl+Super+J**
+- View split on left **Ctrl+Super+H**
+- View split on right **Ctrl+Super+L**
+6. System:
+- Lock screen **Shift+Ctrl+Super+L**
 
 ### Multitasking
 
