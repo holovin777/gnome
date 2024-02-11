@@ -319,6 +319,7 @@ Hidden=true
 
 ```bash
 sudo pacman -S cups cups-pdf nss-mdns
+sudo usermod -aG lpadmin admin
 sudo systemctl start cups.service
 sudo systemctl enable cups.service
 ```
