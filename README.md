@@ -203,6 +203,12 @@ WaylandEnable=false
 - View split on right **Ctrl+Super+L**
 6. System:
 - Lock screen **Shift+Ctrl+Super+L**
+7. Sound and Media:
+- Next track **Super+.**
+- Play (or play/pause) **Super+/**
+- Previous track **Super+,**
+- Volume down **Alt+Super+J**
+- Volume up **Alt+Super+K**
 
 ### Multitasking
 
