@@ -335,7 +335,7 @@ Hidden=true
 
 ```bash
 sudo pacman -S cups cups-pdf nss-mdns
-sudo usermod -aG lpadmin admin
+sudo usermod -aG lp admin
 sudo systemctl start cups.service
 sudo systemctl enable cups.service
 ```
@@ -355,11 +355,56 @@ hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files
 ```
 
 ```bash
+sudo vim /etc/cups/cupsd.conf
+```
+
+```python
+<Location />
+   Order allow,deny
+   Allow all
+</Location>
+```
+
+```bash
 sudo systemctl restart cups.service
 ```
 
 Open browser with address `localhost:631`
 
+### Remote local connect to admin panel
+
+```bash
+sudo vim /etc/cups/cupsd.conf
+```
+
+```python
+...
+Listen your_ip:631
+ 
+# Restrict access to the server...
+# By default only localhost connections are possible
+<Location />
+   Order allow,deny
+   Allow from @LOCAL
+</Location>
+
+# Restrict access to the admin pages...
+<Location /admin>
+   Order allow,deny
+   Allow from @LOCAL
+</Location>
+
+# Restrict access to configuration files...
+<Location /admin/conf>
+   AuthType Basic
+   Require user @SYSTEM
+   Order allow,deny
+   Allow from @LOCAL
+</Location>
+
+DefaultEncryption IfRequested
+...
+```
 
 ## Steam
 
