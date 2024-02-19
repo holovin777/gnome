@@ -177,61 +177,6 @@ WaylandEnable=false
 ...
 ```
 
-### Install navigation
-
-1. Open Settings
-2. Keyboard
-3. Keyboard Shourtcuts - View and Customize Shourts
-4. Navigation:
-- Move window one workspace to the left **Shift+Super+H**
-- Move window one workspace to the right **Shift+Super+L**
-- Move window to last workspace **Shift+Super+.**
-- Switch applications **Super+J**
-- Switch to last workspace **Super+.**
-- Switch to workspace 1 **Super+1**
-- Switch to workspace 2 **Super+2**
-- Switch to workspace 3 **Super+3**
-- Switch to workspace 4 **Super+4**
-- Switch to workspace on the left **Super+H**
-- Switch to workspace on the right **Super+L**
-5. Windows:
-- Close window **Shift+Super+Q**
-- Hide window **Alt+Super+H**
-- Maximaze window **Ctrl+Super+K**
-- Restore window **Ctrl+Super+J**
-- View split on left **Ctrl+Super+H**
-- View split on right **Ctrl+Super+L**
-6. System:
-- Lock screen **Shift+Ctrl+Super+L**
-7. Sound and Media:
-- Next track **Super+.**
-- Play (or play/pause) **Super+/**
-- Previous track **Super+,**
-- Volume down **Alt+Super+J**
-- Volume up **Alt+Super+K**
-
-### Multitasking
-
-1. Open Settings
-2. Multitasking
-3. Multi-Monitor
-4. Workspaces on primary display only
-
-## Cromium install
-```bash
-pacman -S chromium
-```
-Install extantions:
-
-1. Json formatter
-2. Vimium
-
-Change search engine:
-
-1. Settings
-2. Search engine
-3. Search engine used in the address bar. Learn more DuckDuckGo
-
 ## Users and services
 
 ```bash
