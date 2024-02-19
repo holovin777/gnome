@@ -165,57 +165,6 @@ vim /etc/sudoers
 %wheel ALL=(ALL) ALL
 ```
 
-
-## Choose video driver
-
-```bash
-pacman -S xf86-video-fbdev xf86-video-vesa xf86-video-ati xf86-video-intel xf86-video-amdgpu xf86-video-nouveau
-```
-
-### Install navigation
-
-1. Open Settings
-2. Keyboard
-3. Keyboard Shourtcuts - View and Customize Shourts
-4. Navigation:
-- Move window one monitor down Shift+Super+J
-- Move window one monitor to the left Shift+Super+H
-- Move window one monitor to the right Shift+Super+L
-- Move window one monitor up Shift+Super+K
-- Move window to last workspace Shift+Super+.
-- Switch applications Super+J
-- Switch to last workspace Super+.
-- Switch to workspace 1 Super+1
-- Switch to workspace 2 Super+2
-- Switch to workspace 3 Super+3
-- Switch to workspace 4 Super+4
-- Switch to workspace on the left Super+H
-- Switch to workspace on the right Super+L
-5. Windows:
-- Close window Shift+Super+Q
-
-### Multitasking
-
-1. Open Settings
-2. Multitasking
-3. Multi-Monitor
-4. Workspaces on primary display only
-
-## Cromium install
-```bash
-pacman -S chromium
-```
-Install extantions:
-
-1. Json formatter
-2. Vimium
-
-Change search engine:
-
-1. Settings
-2. Search engine
-3. Search engine used in the address bar. Learn more DuckDuckGo
-
 ## Users and services
 
 ```bash
@@ -272,6 +221,14 @@ sudo vim /etc/fstab
 ```
 
 
+
+## Choose video driver
+
+```bash
+pacman -S xf86-video-fbdev xf86-video-vesa xf86-video-ati xf86-video-intel xf86-video-amdgpu xf86-video-nouveau
+```
+
+
 ## Start Gnome
 
 On the remote machine
@@ -280,6 +237,50 @@ On the remote machine
 systemctl start gdm.service
 systemctl enable gdm.service
 ```
+
+### Install navigation
+
+1. Open Settings
+2. Keyboard
+3. Keyboard Shourtcuts - View and Customize Shourts
+4. Navigation:
+- Move window one monitor down Shift+Super+J
+- Move window one monitor to the left Shift+Super+H
+- Move window one monitor to the right Shift+Super+L
+- Move window one monitor up Shift+Super+K
+- Move window to last workspace Shift+Super+.
+- Switch applications Super+J
+- Switch to last workspace Super+.
+- Switch to workspace 1 Super+1
+- Switch to workspace 2 Super+2
+- Switch to workspace 3 Super+3
+- Switch to workspace 4 Super+4
+- Switch to workspace on the left Super+H
+- Switch to workspace on the right Super+L
+5. Windows:
+- Close window Shift+Super+Q
+
+### Multitasking
+
+1. Open Settings
+2. Multitasking
+3. Multi-Monitor
+4. Workspaces on primary display only
+
+## Cromium install
+```bash
+pacman -S chromium
+```
+Install extantions:
+
+1. Json formatter
+2. Vimium
+
+Change search engine:
+
+1. Settings
+2. Search engine
+3. Search engine used in the address bar. Learn more DuckDuckGo
 
 ## Ohmyzsh
 ```bash
