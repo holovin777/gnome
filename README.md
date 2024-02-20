@@ -232,15 +232,83 @@ sudo vim /etc/fstab
 /dev/sdX1    /    ext4    defaults,discard    0    1
 ```
 
-
 ## Start Gnome
 
 On the remote machine
 
 ```bash
-systemctl start gdm.service
 systemctl enable gdm.service
+systemctl start gdm.service
 ```
+
+## Install navigation
+
+1. Open Settings
+2. Keyboard
+3. Keyboard Shourtcuts - View and Customize Shourts
+4. Navigation:
+- Move window one monitor down **Shift+Super+J**
+- Move window one monitor up **Shift+Super+K**
+- Move window one workspace to the left **Shift+Super+H**
+- Move window one workspace to the right **Shift+Super+L**
+- Move window to last workspace **Shift+Super+.**
+- Switch applications **Super+J**
+- Switch to last workspace **Super+.**
+- Switch to workspace 1 **Super+1**
+- Switch to workspace 2 **Super+2**
+- Switch to workspace 3 **Super+3**
+- Switch to workspace 4 **Super+4**
+- Switch to workspace on the left **Super+H**
+- Switch to workspace on the right **Super+L**
+5. Windows:
+- Close window **Shift+Super+Q**
+- Hide window **Alt+Super+H**
+- Maximaze window **Ctrl+Super+K**
+- Restore window **Ctrl+Super+J**
+- View split on left **Ctrl+Super+H**
+- View split on right **Ctrl+Super+L**
+6. System:
+- Lock screen **Shift+Ctrl+Super+L**
+7. Sound and Media:
+- Next track **Alt+Super+.**
+- Play (or play/pause) **Alt+Super+/**
+- Previous track **Alt+Super+,**
+- Volume down **Alt+Super+J**
+- Volume up **Alt+Super+K**
+
+## Multitasking
+
+1. Open Settings
+2. Multitasking
+3. Multi-Monitor
+4. Workspaces on primary display only
+
+## Laptop off suspend if lid is close
+
+```bash
+sudo vim /etc/systemd/logind.conf
+```
+
+```python
+...
+HandleLidSwitch=ignore
+...
+```
+
+## Cromium install
+```bash
+pacman -S chromium
+```
+Install extantions:
+
+1. Json formatter
+2. Vimium
+
+Change search engine:
+
+1. Settings
+2. Search engine
+3. Search engine used in the address bar. Learn more DuckDuckGo
 
 ## Ohmyzsh
 ```bash
@@ -348,18 +416,6 @@ Listen your_ip:631
 </Location>
 
 DefaultEncryption IfRequested
-...
-```
-
-## Laptop off suspend if lid is close
-
-```bash
-sudo vim /etc/systemd/logind.conf
-```
-
-```python
-...
-HandleLidSwitch=ignore
 ...
 ```
 
@@ -472,18 +528,3 @@ Copy folder without overwriting an exists files
 ```bash
 cp -r -n Downloads Downloads1
 ```
-
-### Install windows.iso
-
-```bash
-cd Downloads
-pacman -S p7zip
-git clone https://aur.archlinux.org/windows2usb-git.git
-git clone https://aur.archlinux.org/ms-sys.git
-cd ms-sys
-makepkg -si
-cd ../windows2usb-git
-makepkg -si
-```
-
-[How to use](https://github.com/ValdikSS/windows2usb#how-to-use)
