@@ -183,6 +183,8 @@ WaylandEnable=false
 2. Keyboard
 3. Keyboard Shourtcuts - View and Customize Shourts
 4. Navigation:
+- Move window one monitor down **Shift+Super+J**
+- Move window one monitor up **Shift+Super+K**
 - Move window one workspace to the left **Shift+Super+H**
 - Move window one workspace to the right **Shift+Super+L**
 - Move window to last workspace **Shift+Super+.**
@@ -204,9 +206,9 @@ WaylandEnable=false
 6. System:
 - Lock screen **Shift+Ctrl+Super+L**
 7. Sound and Media:
-- Next track **Super+.**
-- Play (or play/pause) **Super+/**
-- Previous track **Super+,**
+- Next track **Alt+Super+.**
+- Play (or play/pause) **Alt+Super+/**
+- Previous track **Alt+Super+,**
 - Volume down **Alt+Super+J**
 - Volume up **Alt+Super+K**
 
