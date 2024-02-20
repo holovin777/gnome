@@ -404,6 +404,18 @@ DefaultEncryption IfRequested
 ...
 ```
 
+## Laptop off suspend if lid is close
+
+```bash
+sudo vim /etc/systemd/logind.conf
+```
+
+```python
+...
+HandleLidSwitch=ignore
+...
+```
+
 ## Steam
 
 ```bash
