@@ -188,7 +188,6 @@ WaylandEnable=false
 - Move window one workspace to the left **Shift+Super+H**
 - Move window one workspace to the right **Shift+Super+L**
 - Move window to last workspace **Shift+Super+.**
-- Switch applications **Super+K**
 - Switch to last workspace **Super+.**
 - Switch to workspace 1 **Super+1**
 - Switch to workspace 2 **Super+2**
@@ -196,6 +195,7 @@ WaylandEnable=false
 - Switch to workspace 4 **Super+4**
 - Switch to workspace on the left **Super+H**
 - Switch to workspace on the right **Super+L**
+- Switch windows **Super+J**
 5. Windows:
 - Close window **Shift+Super+Q**
 - Hide window **Alt+Super+H**
