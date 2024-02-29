@@ -177,63 +177,6 @@ WaylandEnable=false
 ...
 ```
 
-### Install navigation
-
-1. Open Settings
-2. Keyboard
-3. Keyboard Shourtcuts - View and Customize Shourts
-4. Navigation:
-- Move window one monitor down **Shift+Super+J**
-- Move window one monitor up **Shift+Super+K**
-- Move window one workspace to the left **Shift+Super+H**
-- Move window one workspace to the right **Shift+Super+L**
-- Move window to last workspace **Shift+Super+.**
-- Switch to last workspace **Super+.**
-- Switch to workspace 1 **Super+1**
-- Switch to workspace 2 **Super+2**
-- Switch to workspace 3 **Super+3**
-- Switch to workspace 4 **Super+4**
-- Switch to workspace on the left **Super+H**
-- Switch to workspace on the right **Super+L**
-- Switch windows **Super+J**
-5. Windows:
-- Close window **Shift+Super+Q**
-- Hide window **Alt+Super+H**
-- Maximaze window **Ctrl+Super+K**
-- Restore window **Ctrl+Super+J**
-- View split on left **Ctrl+Super+H**
-- View split on right **Ctrl+Super+L**
-6. System:
-- Lock screen **Shift+Ctrl+Super+L**
-7. Sound and Media:
-- Next track **Alt+Super+.**
-- Play (or play/pause) **Alt+Super+/**
-- Previous track **Alt+Super+,**
-- Volume down **Alt+Super+J**
-- Volume up **Alt+Super+K**
-
-### Multitasking
-
-1. Open Settings
-2. Multitasking
-3. Multi-Monitor
-4. Workspaces on primary display only
-
-## Cromium install
-```bash
-pacman -S chromium
-```
-Install extantions:
-
-1. Json formatter
-2. Vimium
-
-Change search engine:
-
-1. Settings
-2. Search engine
-3. Search engine used in the address bar. Learn more DuckDuckGo
-
 ## Users and services
 
 ```bash
@@ -289,15 +232,85 @@ sudo vim /etc/fstab
 /dev/sdX1    /    ext4    defaults,discard    0    1
 ```
 
-
 ## Start Gnome
 
 On the remote machine
 
 ```bash
-systemctl start gdm.service
 systemctl enable gdm.service
+systemctl start gdm.service
 ```
+
+## Install navigation
+
+### Install navigation
+
+1. Open Settings
+2. Keyboard
+3. Keyboard Shourtcuts - View and Customize Shourts
+4. Navigation:
+- Move window one monitor down **Shift+Super+J**
+- Move window one monitor up **Shift+Super+K**
+- Move window one workspace to the left **Shift+Super+H**
+- Move window one workspace to the right **Shift+Super+L**
+- Move window to last workspace **Shift+Super+.**
+- Switch to last workspace **Super+.**
+- Switch to workspace 1 **Super+1**
+- Switch to workspace 2 **Super+2**
+- Switch to workspace 3 **Super+3**
+- Switch to workspace 4 **Super+4**
+- Switch to workspace on the left **Super+H**
+- Switch to workspace on the right **Super+L**
+- Switch windows **Super+J**
+5. Windows:
+- Close window **Shift+Super+Q**
+- Hide window **Alt+Super+H**
+- Maximaze window **Ctrl+Super+K**
+- Restore window **Ctrl+Super+J**
+- View split on left **Ctrl+Super+H**
+- View split on right **Ctrl+Super+L**
+6. System:
+- Lock screen **Shift+Ctrl+Super+L**
+7. Sound and Media:
+- Next track **Alt+Super+.**
+- Play (or play/pause) **Alt+Super+/**
+- Previous track **Alt+Super+,**
+- Volume down **Alt+Super+J**
+- Volume up **Alt+Super+K**
+
+## Multitasking
+
+1. Open Settings
+2. Multitasking
+3. Multi-Monitor
+4. Workspaces on primary display only
+
+## Laptop off suspend if lid is close
+
+```bash
+sudo vim /etc/systemd/logind.conf
+```
+
+```python
+...
+HandleLidSwitch=ignore
+...
+```
+
+## Cromium install
+```bash
+pacman -S chromium
+```
+Install extantions:
+
+1. Json formatter
+2. Vimium
+
+Change search engine:
+
+1. Settings
+2. Search engine
+3. Search engine used in the address bar. Learn more DuckDuckGo
 
 ## Ohmyzsh
 ```bash
@@ -337,6 +350,7 @@ Hidden=true
 
 ```bash
 sudo pacman -S cups cups-pdf nss-mdns
+sudo usermod -aG lp admin
 sudo systemctl start cups.service
 sudo systemctl enable cups.service
 ```
@@ -356,11 +370,56 @@ hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files
 ```
 
 ```bash
-sudo systemctl start cups.service
+sudo vim /etc/cups/cupsd.conf
+```
+
+```python
+<Location />
+   Order allow,deny
+   Allow all
+</Location>
+```
+
+```bash
+sudo systemctl restart cups.service
 ```
 
 Open browser with address `localhost:631`
 
+### Remote local connect to admin panel
+
+```bash
+sudo vim /etc/cups/cupsd.conf
+```
+
+```python
+...
+Listen your_ip:631
+ 
+# Restrict access to the server...
+# By default only localhost connections are possible
+<Location />
+   Order allow,deny
+   Allow from @LOCAL
+</Location>
+
+# Restrict access to the admin pages...
+<Location /admin>
+   Order allow,deny
+   Allow from @LOCAL
+</Location>
+
+# Restrict access to configuration files...
+<Location /admin/conf>
+   AuthType Basic
+   Require user @SYSTEM
+   Order allow,deny
+   Allow from @LOCAL
+</Location>
+
+DefaultEncryption IfRequested
+...
+```
 
 ## Steam
 
@@ -472,17 +531,3 @@ Copy folder without overwriting an exists files
 cp -r -n Downloads Downloads1
 ```
 
-### Install windows.iso
-
-```bash
-cd Downloads
-pacman -S p7zip
-git clone https://aur.archlinux.org/windows2usb-git.git
-git clone https://aur.archlinux.org/ms-sys.git
-cd ms-sys
-makepkg -si
-cd ../windows2usb-git
-makepkg -si
-```
-
-[How to use](https://github.com/ValdikSS/windows2usb#how-to-use)
