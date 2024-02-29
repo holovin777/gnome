@@ -285,7 +285,7 @@ systemctl start gdm.service
 3. Multi-Monitor
 4. Workspaces on primary display only
 
-## Laptop off suspend if lid is close
+## Laptop off suspend if lid is closed
 
 ```bash
 sudo vim /etc/systemd/logind.conf
