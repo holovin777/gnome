@@ -243,8 +243,6 @@ systemctl start gdm.service
 
 ## Install navigation
 
-### Install navigation
-
 1. Open Settings
 2. Keyboard
 3. Keyboard Shourtcuts - View and Customize Shourts
