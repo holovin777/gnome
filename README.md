@@ -88,6 +88,15 @@ passwd
 pacman -Syu
 ```
 
+## Users and services
+
+```bash
+useradd -m -G users -s /bin/bash user
+useradd -m -G users,wheel,video -s /bin/bash admin
+passwd user
+passwd admin
+```
+
 ## Install gnome-shell
 
 ### Initial install
@@ -107,6 +116,7 @@ pacman -S amd-ucode
 
 ```bash
 pacman -S android-file-transfer android-tools android-udev
+usermod -aG adbusers admin
 ```
 
 ### Photo, video, pdf install
@@ -175,15 +185,6 @@ vim /etc/gdm/custom.conf
 # Uncomment the line below to force the login screen to use Xorg
 WaylandEnable=false
 ...
-```
-
-## Users and services
-
-```bash
-useradd -m -G users -s /bin/bash user
-useradd -m -G users,wheel,adbusers,video -s /bin/bash admin
-passwd user
-passwd admin
 ```
 
 ## Reboot remote computer
