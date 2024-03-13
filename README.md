@@ -271,7 +271,7 @@ systemctl start gdm.service
 - View split on left **Ctrl+Super+H**
 - View split on right **Ctrl+Super+L**
 6. System:
-- Lock screen **Shift+Ctrl+Super+L**
+- Lock screen **Shift+Ctrl+Alt+Super+L**
 7. Sound and Media:
 - Next track **Alt+Super+.**
 - Play (or play/pause) **Alt+Super+/**
