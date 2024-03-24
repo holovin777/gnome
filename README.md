@@ -336,7 +336,7 @@ SystemAccount=true
 ## Yay
 
 ```bash
-git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+cd Downloads && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd
 ```
 
 
