@@ -299,6 +299,7 @@ HandleLidSwitch=ignore
 ```
 
 ## Cromium install
+
 ```bash
 pacman -S chromium
 ```
@@ -330,6 +331,12 @@ sudo vim /var/lib/AccountsService/users/username
 ...
 SystemAccount=true
 ...
+```
+
+## Yay
+
+```bash
+git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 ```
 
 
