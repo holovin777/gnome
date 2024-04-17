@@ -307,6 +307,7 @@ Install extantions:
 
 1. Json formatter
 2. Vimium
+3. Dark mode - Night eye
 
 Change search engine:
 
