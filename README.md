@@ -433,7 +433,7 @@ DefaultEncryption IfRequested
 ## Camera
 
 ```bash
-sudo pacan -S libgphoto2 gphoto2 gvfs-gphoto2 geeqie
+sudo pacman -S libgphoto2 gphoto2 gvfs-gphoto2 geeqie
 sudo vim /usr/share/thumbnailers/gdk-pixbuf-thumbnailer.thumbnailer
 ```
 Add this line to MimeType=
