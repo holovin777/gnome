@@ -102,7 +102,7 @@ passwd admin
 ### Initial install
 
 ```bash
-pacman -S gnome-shell gdm gnome-disk-utility archlinux-keyring alacritty openssh pavucontrol xf86-input-synaptics xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid wqy-zenhei noto-fonts-emoji sudo grub gst-libav ntfs-3g gnome-control-center git gnome-keyring gnome-applets wget rsync
+pacman -S gnome-shell gdm gnome-disk-utility archlinux-keyring alacritty openssh pavucontrol xf86-input-synaptics xorg-server xorg-xinit network-manager-applet dnsmasq ttf-dejavu ttf-droid wqy-zenhei noto-fonts-emoji sudo grub gst-libav ntfs-3g gnome-control-center git gnome-keyring gnome-applets wget rsync
 ```
 
 ### Intel or Amd install
